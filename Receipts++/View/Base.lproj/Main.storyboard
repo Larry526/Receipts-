@@ -68,12 +68,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0xL-uo-W3u">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0xL-uo-W3u">
                                 <rect key="frame" x="0.0" y="194" width="375" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="533155348.00440502">
                                     <!--2017-11-23 18:42:28 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePicker:" destination="JEX-9P-axG" eventType="valueChanged" id="RAF-Qb-DCy"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgj-2p-b21">
                                 <rect key="frame" x="139" y="418" width="96" height="21"/>
@@ -153,6 +156,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="businessCheckBox" destination="vaK-P7-Ojk" id="7g5-cO-nrR"/>
+                        <outlet property="datePicker" destination="0xL-uo-W3u" id="7vU-2P-DNj"/>
                         <outlet property="familyCheckBox" destination="R9H-EL-JGw" id="fo0-Lv-TbJ"/>
                         <outlet property="personalCheckBox" destination="UYn-xV-dON" id="oVi-r6-QST"/>
                     </connections>

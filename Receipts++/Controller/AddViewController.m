@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 
 @interface AddViewController ()
+
 @property (weak, nonatomic) IBOutlet UIButton *personalCheckBox;
 @property (weak, nonatomic) IBOutlet UIButton *familyCheckBox;
 @property (weak, nonatomic) IBOutlet UIButton *businessCheckBox;
@@ -16,6 +17,8 @@
 @property (assign, nonatomic) BOOL familyChecked;
 @property (assign, nonatomic) BOOL businessChecked;
 
+@property(nonatomic, retain) NSDate *datePicked;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 
 @end
@@ -33,7 +36,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Date Picker
 
+- (IBAction)datePicker:(UIDatePicker *)sender {
+    
+    self.datePicked = [self.datePicker date];
+    NSLog(@"%@", self.datePicked);
+
+}
+
+// Checkboxes
 
 - (IBAction)personalPressed:(UIButton *)sender {
     if(!self.personalChecked){
