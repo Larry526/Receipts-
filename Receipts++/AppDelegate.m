@@ -22,7 +22,7 @@
 
     UINavigationController *masterNavigationController = (UINavigationController *)self.window.rootViewController;
     MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    controller.managedObjectContext = self.persistentContainer.viewContext;
     return YES;
 }
 
