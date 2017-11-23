@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
 #import "MasterViewController.h"
 
 @interface AppDelegate ()
@@ -20,9 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    UINavigationController *masterNavigationController = (UINavigationController *)self.window.rootViewController;
-    MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
-    controller.managedObjectContext = self.persistentContainer.viewContext;
+//    UINavigationController *masterNavigationController = (UINavigationController *)self.window.rootViewController;
+//    MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
+//    controller.managedObjectContext = self.persistentContainer.viewContext;
     return YES;
 }
 

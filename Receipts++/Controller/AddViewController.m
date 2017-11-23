@@ -7,6 +7,7 @@
 //
 
 #import "AddViewController.h"
+#import "DataHandler.h"
 
 @interface AddViewController ()
 
@@ -19,6 +20,7 @@
 
 @property(nonatomic, retain) NSDate *datePicked;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (nonatomic) NSMutableSet<Tag *>*selectedTags;
 
 
 @end
@@ -28,58 +30,67 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.personalChecked = YES;
-
+    
+    //TODO use the handler's tags property to populate your labels.
+    
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 // Date Picker
 
 - (IBAction)datePicker:(UIDatePicker *)sender {
     
     self.datePicked = [self.datePicker date];
     NSLog(@"%@", self.datePicked);
-
+    
 }
 
 // Checkboxes
 
 - (IBAction)personalPressed:(UIButton *)sender {
-    if(!self.personalChecked){
-        [self.personalCheckBox setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
-        self.personalChecked = YES;
+    sender.selected = !sender.selected;
+    
+    if (sender.isSelected) {
+        [sender setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+        [self.selectedTags addObject:self.dataHandler.tags[2]];
+    } else {
+        [sender setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+        [self.selectedTags removeObject:self.dataHandler.tags[2]];
     }
-    else if(self.personalChecked){
-        [self.personalCheckBox setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
-        self.personalChecked = NO;
-}
 }
 
 
 - (IBAction)familyPressed:(UIButton *)sender {
-    if(!self.familyChecked){
-        [self.familyCheckBox setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
-        self.familyChecked = YES;
-    }
-    else if(self.familyChecked){
-        [self.familyCheckBox setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
-        self.familyChecked = NO;
+    sender.selected = !sender.selected;
+    if (sender.isSelected) {
+        [sender setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+        [self.selectedTags addObject:self.dataHandler.tags[1]];
+    } else {
+        [sender setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+        [self.selectedTags removeObject:self.dataHandler.tags[1]];
     }
 }
 
 - (IBAction)businessPressed:(UIButton *)sender {
-    if(!self.businessChecked){
-        [self.businessCheckBox setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
-        self.businessChecked = YES;
-    }
-    else if(self.businessChecked){
-        [self.businessCheckBox setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
-        self.businessChecked = NO;
+    sender.selected = !sender.selected;
+    
+    if (sender.isSelected) {
+        [sender setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+        [self.selectedTags addObject:self.dataHandler.tags[0]];
+    } else {
+        [sender setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+        [self.selectedTags removeObject:self.dataHandler.tags[0]];
     }
 }
+
+- (IBAction)save:(UIBarButtonItem *)sender {
+    // add other stuff
+    NSArray <Tag*>*tags = self.selectedTags.allObjects;
+    NSDictionary *results = @{@"tags": tags};
+    
+    
+    [self.dataHandler saveReceipt:results];
+    
+}
+
 
 
 

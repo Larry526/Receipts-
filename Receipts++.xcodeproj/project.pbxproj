@@ -10,13 +10,13 @@
 		05BB66071FC7435400E0C93D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BB66061FC7435400E0C93D /* AppDelegate.m */; };
 		05BB660A1FC7435400E0C93D /* Receipts__.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05BB66081FC7435400E0C93D /* Receipts__.xcdatamodeld */; };
 		05BB660D1FC7435400E0C93D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BB660C1FC7435400E0C93D /* MasterViewController.m */; };
-		05BB66101FC7435400E0C93D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BB660F1FC7435400E0C93D /* DetailViewController.m */; };
 		05BB66131FC7435400E0C93D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BB66111FC7435400E0C93D /* Main.storyboard */; };
 		05BB66151FC7435400E0C93D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BB66141FC7435400E0C93D /* Assets.xcassets */; };
 		05BB66181FC7435400E0C93D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BB66161FC7435400E0C93D /* LaunchScreen.storyboard */; };
 		05BB661B1FC7435400E0C93D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BB661A1FC7435400E0C93D /* main.m */; };
 		05BB66231FC7474600E0C93D /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BB66221FC7474600E0C93D /* CustomTableViewCell.m */; };
 		05BB662B1FC74D2200E0C93D /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BB662A1FC74D2200E0C93D /* AddViewController.m */; };
+		05DD1C5E1FC76E9A006FD36A /* DataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DD1C5D1FC76E9A006FD36A /* DataHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,6 @@
 		05BB66091FC7435400E0C93D /* Receipts__.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Receipts__.xcdatamodel; sourceTree = "<group>"; };
 		05BB660B1FC7435400E0C93D /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		05BB660C1FC7435400E0C93D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		05BB660E1FC7435400E0C93D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		05BB660F1FC7435400E0C93D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		05BB66121FC7435400E0C93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05BB66141FC7435400E0C93D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05BB66171FC7435400E0C93D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +35,8 @@
 		05BB66221FC7474600E0C93D /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		05BB66291FC74D2200E0C93D /* AddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		05BB662A1FC74D2200E0C93D /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		05DD1C5C1FC76E9A006FD36A /* DataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHandler.h; sourceTree = "<group>"; };
+		05DD1C5D1FC76E9A006FD36A /* DataHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +69,9 @@
 		05BB66041FC7435400E0C93D /* Receipts++ */ = {
 			isa = PBXGroup;
 			children = (
+				05DD1C5B1FC76E38006FD36A /* Model */,
 				05BB66261FC74CD300E0C93D /* Controller */,
 				05BB66251FC7476C00E0C93D /* View */,
-				05BB66051FC7435400E0C93D /* AppDelegate.h */,
-				05BB66061FC7435400E0C93D /* AppDelegate.m */,
 				05BB66191FC7435400E0C93D /* Info.plist */,
 				05BB66081FC7435400E0C93D /* Receipts__.xcdatamodeld */,
 				05BB66241FC7474D00E0C93D /* Supporting Files */,
@@ -83,6 +82,8 @@
 		05BB66241FC7474D00E0C93D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				05BB66051FC7435400E0C93D /* AppDelegate.h */,
+				05BB66061FC7435400E0C93D /* AppDelegate.m */,
 				05BB66141FC7435400E0C93D /* Assets.xcassets */,
 				05BB66161FC7435400E0C93D /* LaunchScreen.storyboard */,
 				05BB661A1FC7435400E0C93D /* main.m */,
@@ -107,10 +108,17 @@
 				05BB660C1FC7435400E0C93D /* MasterViewController.m */,
 				05BB66291FC74D2200E0C93D /* AddViewController.h */,
 				05BB662A1FC74D2200E0C93D /* AddViewController.m */,
-				05BB660E1FC7435400E0C93D /* DetailViewController.h */,
-				05BB660F1FC7435400E0C93D /* DetailViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		05DD1C5B1FC76E38006FD36A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				05DD1C5C1FC76E9A006FD36A /* DataHandler.h */,
+				05DD1C5D1FC76E9A006FD36A /* DataHandler.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,12 +193,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BB661B1FC7435400E0C93D /* main.m in Sources */,
+				05DD1C5E1FC76E9A006FD36A /* DataHandler.m in Sources */,
 				05BB660A1FC7435400E0C93D /* Receipts__.xcdatamodeld in Sources */,
 				05BB66231FC7474600E0C93D /* CustomTableViewCell.m in Sources */,
 				05BB662B1FC74D2200E0C93D /* AddViewController.m in Sources */,
 				05BB660D1FC7435400E0C93D /* MasterViewController.m in Sources */,
 				05BB66071FC7435400E0C93D /* AppDelegate.m in Sources */,
-				05BB66101FC7435400E0C93D /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DataHandler;
+
 
 @interface AddViewController : UIViewController
-
+// pass in the context
+@property (nonatomic) DataHandler *dataHandler;
 @end
