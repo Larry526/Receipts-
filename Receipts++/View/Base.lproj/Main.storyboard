@@ -88,7 +88,10 @@
                                     <constraint firstAttribute="width" constant="30" id="3nE-tc-4KN"/>
                                     <constraint firstAttribute="height" constant="30" id="gbH-Ky-Zep"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="unchecked"/>
+                                <state key="normal" title="Button" image="checked"/>
+                                <connections>
+                                    <action selector="personalPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="8r8-8P-fah"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaK-P7-Ojk">
                                 <rect key="frame" x="249" y="597" width="30" height="30"/>
@@ -97,6 +100,9 @@
                                     <constraint firstAttribute="height" constant="30" id="qHz-mt-55r"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="unchecked"/>
+                                <connections>
+                                    <action selector="businessPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="oGj-Ut-Jqv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9H-EL-JGw">
                                 <rect key="frame" x="249" y="537" width="30" height="30"/>
@@ -105,6 +111,9 @@
                                     <constraint firstAttribute="width" constant="30" id="r6Q-hH-rXn"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="unchecked"/>
+                                <connections>
+                                    <action selector="familyPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="KIE-gk-bFe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Personal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5L-Gl-jAC">
                                 <rect key="frame" x="86" y="477" width="95" height="21"/>
@@ -142,6 +151,11 @@
                     <navigationItem key="navigationItem" title="Add Receipts" id="mOI-FS-AaM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jSb-Rt-mRb"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="businessCheckBox" destination="vaK-P7-Ojk" id="7g5-cO-nrR"/>
+                        <outlet property="familyCheckBox" destination="R9H-EL-JGw" id="fo0-Lv-TbJ"/>
+                        <outlet property="personalCheckBox" destination="UYn-xV-dON" id="oVi-r6-QST"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,6 +219,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checked" width="600" height="596"/>
         <image name="unchecked" width="280" height="280"/>
     </resources>
 </document>

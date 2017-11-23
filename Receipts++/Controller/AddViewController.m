@@ -9,6 +9,14 @@
 #import "AddViewController.h"
 
 @interface AddViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *personalCheckBox;
+@property (weak, nonatomic) IBOutlet UIButton *familyCheckBox;
+@property (weak, nonatomic) IBOutlet UIButton *businessCheckBox;
+@property (assign, nonatomic) BOOL personalChecked;
+@property (assign, nonatomic) BOOL familyChecked;
+@property (assign, nonatomic) BOOL businessChecked;
+
+
 
 @end
 
@@ -16,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.personalChecked = YES;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +33,47 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (IBAction)personalPressed:(UIButton *)sender {
+    if(!self.personalChecked){
+        [self.personalCheckBox setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+        self.personalChecked = YES;
+    }
+    else if(self.personalChecked){
+        [self.personalCheckBox setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+        self.personalChecked = NO;
 }
-*/
+}
+
+
+- (IBAction)familyPressed:(UIButton *)sender {
+    if(!self.familyChecked){
+        [self.familyCheckBox setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+        self.familyChecked = YES;
+    }
+    else if(self.familyChecked){
+        [self.familyCheckBox setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+        self.familyChecked = NO;
+    }
+}
+
+- (IBAction)businessPressed:(UIButton *)sender {
+    if(!self.businessChecked){
+        [self.businessCheckBox setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+        self.businessChecked = YES;
+    }
+    else if(self.businessChecked){
+        [self.businessCheckBox setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+        self.businessChecked = NO;
+    }
+}
+
+
+
+
+
+
+
 
 @end
