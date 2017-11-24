@@ -29,6 +29,8 @@
     return self;
 }
 
+
+
 - (void)setupCategories {
     // do a count fetch on the context using Tag as the entity name
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
@@ -50,7 +52,12 @@
 - (void)createCategories {
     Tag *tag1 = [[Tag alloc] initWithContext:self.context];
     tag1.tagName = @"Personal";
+    Tag *tag2 = [[Tag alloc] initWithContext:self.context];
+    tag2.tagName = @"Business";
+    Tag *tag3 = [[Tag alloc] initWithContext:self.context];
+    tag3.tagName = @"Family";
     [self.delegate saveContext];
+
 }
 
 -(void)saveReceipt:(NSDictionary *)dict {
@@ -60,10 +67,15 @@
     receipt.timestamp = dict[@"timeStamp"];
     NSArray <Tag*>*selectedTags = dict[@"tags"];
     receipt.tags = [NSSet setWithArray:selectedTags];
+//    [receipt addTags:[NSSet setWithArray:selectedTags]];
+//    [receipt removeTags:[NSSet setWithArray:selectedTags]];
     [self.delegate saveContext];
 }
 
-
+-(NSArray<Tag *> *)fetchData {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
+    return [self.context executeFetchRequest:request error:nil];
+}
 
 
 

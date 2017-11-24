@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (nonatomic) NSMutableSet<Tag *>*selectedTags;
 
+@property (weak, nonatomic) IBOutlet UITextField *amountTextField;
+@property (weak, nonatomic) IBOutlet UITextField *noteTextField;
 
 @end
 
@@ -30,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.personalChecked = YES;
-    
+    self.selectedTags = [[NSMutableSet alloc]init];
     //TODO use the handler's tags property to populate your labels.
     
 }
@@ -56,7 +58,6 @@
         [self.selectedTags removeObject:self.dataHandler.tags[2]];
     }
 }
-
 
 - (IBAction)familyPressed:(UIButton *)sender {
     sender.selected = !sender.selected;
@@ -84,10 +85,16 @@
 - (IBAction)save:(UIBarButtonItem *)sender {
     // add other stuff
     NSArray <Tag*>*tags = self.selectedTags.allObjects;
-    NSDictionary *results = @{@"tags": tags};
+    NSString *amount = self.amountTextField.text;
+    NSString *note = self.noteTextField.text;
+    NSDate *timeStamp = self.datePicked;
+    NSDictionary *results = @{@"tags": tags, @"amount": amount, @"note": note, @"timeStamp": timeStamp};
+//        NSDictionary *results = @{@"amount": amount, @"note": note, @"timeStamp": timeStamp};
+
     
     
     [self.dataHandler saveReceipt:results];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

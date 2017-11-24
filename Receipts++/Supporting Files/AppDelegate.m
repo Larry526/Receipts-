@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-
+//
 //    UINavigationController *masterNavigationController = (UINavigationController *)self.window.rootViewController;
 //    MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
 //    controller.managedObjectContext = self.persistentContainer.viewContext;

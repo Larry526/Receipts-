@@ -91,7 +91,7 @@
                                     <constraint firstAttribute="width" constant="30" id="3nE-tc-4KN"/>
                                     <constraint firstAttribute="height" constant="30" id="gbH-Ky-Zep"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="checked"/>
+                                <state key="normal" title="Button" image="unchecked"/>
                                 <connections>
                                     <action selector="personalPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="8r8-8P-fah"/>
                                 </connections>
@@ -159,9 +159,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="amountTextField" destination="IKI-ax-yWL" id="qkU-2n-B0h"/>
                         <outlet property="businessCheckBox" destination="vaK-P7-Ojk" id="7g5-cO-nrR"/>
                         <outlet property="datePicker" destination="0xL-uo-W3u" id="7vU-2P-DNj"/>
                         <outlet property="familyCheckBox" destination="R9H-EL-JGw" id="fo0-Lv-TbJ"/>
+                        <outlet property="noteTextField" destination="j4P-jZ-3aW" id="1HU-r8-FUJ"/>
                         <outlet property="personalCheckBox" destination="UYn-xV-dON" id="oVi-r6-QST"/>
                     </connections>
                 </viewController>
@@ -216,7 +218,7 @@
                     <navigationItem key="navigationItem" title="Receipts" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="klm-or-Kec">
                             <connections>
-                                <segue destination="JEX-9P-axG" kind="show" id="l4I-qx-mwv"/>
+                                <segue destination="JEX-9P-axG" kind="show" identifier="addReceipt" id="l4I-qx-mwv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -227,7 +229,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checked" width="600" height="596"/>
         <image name="unchecked" width="280" height="280"/>
     </resources>
 </document>

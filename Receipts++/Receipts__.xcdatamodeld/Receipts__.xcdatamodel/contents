@@ -8,7 +8,7 @@
     </entity>
     <entity name="Tag" representedClassName="Tag" syncable="YES" codeGenerationType="class">
         <attribute name="tagName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="receipts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Receipt" inverseName="tags" inverseEntity="Receipt" syncable="YES"/>
+        <relationship name="receipts" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Receipt" inverseName="tags" inverseEntity="Receipt" syncable="YES"/>
     </entity>
     <elements>
         <element name="Receipt" positionX="486" positionY="234" width="128" height="103"/>

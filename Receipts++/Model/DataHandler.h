@@ -17,8 +17,8 @@
 
 
 -(void)saveReceipt:(NSDictionary*)dict;
+-(NSArray<Tag*>*)fetchData;
 
 @property (nonatomic) NSArray<Tag*>*tags;
-
 
 @end
